@@ -29,6 +29,9 @@ class MyCallback(SpeechSynthesizerCallback):
         self._name = name
         self._fout = open(name, 'wb')
 
+    def on_meta_info(self, message):
+        print(message)
+
     def on_binary_data_received(self, raw):
         print('MyCallback.on_binary_data_received: %s' % len(raw))
         self._fout.write(raw)

@@ -105,6 +105,8 @@ class SpeechSynthesizer(SpeechReqProtocol):
                     _log.debug('websocket status changed to stopped')
                     _log.debug('callback on_task_failed')
                     self._callback.on_task_failed(msg)
+                elif name == 'MetaInfo':
+                    self._callback.on_meta_info(msg)
 
         def _on_close(ws):
             _log.debug('callback on_channel_closed')

@@ -135,7 +135,9 @@ class SpeechSynthesizerCallback:
 
     def on_binary_data_received(self, raw):
         raise Exception('Not implemented!')
-    
+
+    def on_meta_info(self, raw):
+        raise Exception('Not implemented!')
 
     """
     * @brief sdk在接收到服务返回识别结束消息时, sdk内部线程上报Completed事件
